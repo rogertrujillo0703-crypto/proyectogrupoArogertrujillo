@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Perfil profesional de Roger Trujillo Cortina, estudiante de Ingeniería de Sistemas Informáticos.">
+    <title>Inicio | Roger Trujillo Cortina</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-glass sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand" href="index.html">RTC<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="perfil.html">Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="formacion.html">Formación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container py-5">
+        <div class="row align-items-center gx-lg-5 gy-4 py-lg-4">
+            <div class="col-lg-7 order-2 order-lg-1">
+                <span class="etiqueta reveal">Hola, soy</span>
+                <h1 class="display-title display-3 reveal retraso-1" id="nombre">Roger <span class="texto-degradado">Trujillo Cortina</span></h1>
+                <p class="fs-3 mt-3 reveal retraso-2"><span id="rol" class="cursor-escritura">Estudiante de Ingeniería de Sistemas</span></p>
+                <p class="lead text-suave reveal retraso-2" id="resumen">Me apasiona crear experiencias web limpias y rápidas. Estudio en Univalle, Santa Cruz de la Sierra (Bolivia), y estoy construyendo mi camino como desarrollador.</p>
+                <div class="d-flex flex-wrap gap-2 mt-4 reveal retraso-3">
+                    <!-- Forma 1 de evento: atributo HTML (onclick en la etiqueta) -->
+                    <button class="btn btn-solido" id="btnCorreo" onclick="mostrarContacto('correo')">✉ Correo</button>
+                    <!-- Forma 2 de evento: propiedad .onclick (se asigna en index.js) -->
+                    <button class="btn btn-neon" id="btnTelefono">☎ Teléfono</button>
+                    <!-- Forma 3 de evento: addEventListener (se asigna en index.js) -->
+                    <button class="btn btn-fantasma" id="btnUbicacion">⌖ Ubicación</button>
+                </div>
+            </div>
+            <div class="col-lg-5 order-1 order-lg-2 text-center reveal">
+                <div class="foto-marco" id="fotoMarco" title="Haz clic en mi foto">
+                    <img src="img/foto-roger.jpg" alt="Foto de Roger Trujillo Cortina" id="fotoPerfil" width="600" height="600">
+                </div>
+                <p class="small text-suave mt-3 mb-0" id="pieFoto">Haz clic en la foto 👆</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="container py-4">
+        <div class="row g-4">
+            <div class="col-lg-5 reveal">
+                <div class="glass p-4 h-100">
+                    <h2 class="h4 mb-3">Datos personales</h2>
+                    <dl class="lista-datos mb-0">
+                        <dt>Nombre completo</dt><dd>Roger Trujillo Cortina</dd>
+                        <dt>Carrera</dt><dd>Ingeniería de Sistemas Informáticos</dd>
+                        <dt>Universidad</dt><dd>Univalle · Santa Cruz, Bolivia</dd>
+                        <dt>Intereses</dt><dd>Desarrollo web · Bases de datos · Diseño de interfaces</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="col-lg-7 reveal retraso-1">
+                <div class="glass p-4 h-100">
+                    <h2 class="h4 mb-3">Contacto</h2>
+                    <div class="panel-contacto" id="panelContacto" aria-live="polite">
+                        <div class="via">Elige una opción</div>
+                        <div class="fs-5 fw-semibold">Pulsa uno de los botones de arriba para ver cómo contactarme.</div>
+                    </div>
+                    <div class="d-flex gap-2 mt-3">
+                        <button class="btn btn-fantasma btn-sm" id="btnLimpiar">Limpiar panel</button>
+                        <button class="btn btn-fantasma btn-sm" id="btnSaludo">Cambiar saludo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <div class="marquee reveal">
+            <div class="marquee-track" id="marquesina">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap 5</span><span>SQL</span><span>Git</span><span>Diseño UI</span><span>Resolución de problemas</span>
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap 5</span><span>SQL</span><span>Git</span><span>Diseño UI</span><span>Resolución de problemas</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 mt-5">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2 small">
+            <span>© <span class="anio">2026</span> Roger Trujillo Cortina · Ingeniería de Sistemas Informáticos</span>
+            <span>Programación Web I · Univalle, Santa Cruz</span>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

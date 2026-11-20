@@ -1,0 +1,427 @@
+/* =========================================================
+   Perfil profesional - Roger Trujillo Cortina
+   Estilos propios (se cargan después de Bootstrap 5.3.8)
+   ========================================================= */
+
+/* ---------- Fuentes locales (carpeta /fonts) ---------- */
+@font-face {
+    font-family: "Sora";
+    src: url("../fonts/sora-latin-wght-normal.woff2") format("woff2");
+    font-weight: 100 800;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/inter-latin-wght-normal.woff2") format("woff2");
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+/* ---------- Variables de color (el color de acento se cambia desde JS) ---------- */
+:root {
+    --fondo: #070b1a;
+    --fondo-2: #0d1330;
+    --texto: #e8ecff;
+    --suave: #9aa6d6;
+    --acento: #7c5cff;
+    --acento-2: #22d3ee;
+    --acento-3: #b6ff5c;
+    --rosa: #ff6b9d;
+    --vidrio: rgba(255, 255, 255, 0.055);
+    --borde: rgba(255, 255, 255, 0.12);
+    --radio: 22px;
+}
+
+/* ---------- Base ---------- */
+html { scroll-behavior: smooth; }
+body {
+    font-family: "Inter", system-ui, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    min-height: 100vh;
+    overflow-x: hidden;
+    animation: entrada-pagina 0.7s ease both;
+}
+h1, h2, h3, h4, h5, .brand, .display-title {
+    font-family: "Sora", "Inter", sans-serif;
+    letter-spacing: -0.02em;
+}
+a { color: var(--acento-2); text-decoration: none; }
+a:hover { color: var(--acento-3); }
+.text-suave { color: var(--suave) !important; }
+::selection { background: var(--acento); color: #fff; }
+
+@keyframes entrada-pagina {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Fondo aurora animado ---------- */
+.aurora {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: radial-gradient(1200px 700px at 50% -10%, var(--fondo-2), var(--fondo));
+}
+.aurora span {
+    position: absolute;
+    width: 46vmax;
+    height: 46vmax;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.45;
+    animation: flotar 22s ease-in-out infinite alternate;
+    will-change: transform;
+}
+.aurora span:nth-child(1) { background: var(--acento);   top: -14%; left: -10%; }
+.aurora span:nth-child(2) { background: var(--acento-2); bottom: -18%; right: -12%; animation-duration: 28s; opacity: 0.32; }
+.aurora span:nth-child(3) { background: var(--rosa);     top: 35%; left: 45%; width: 30vmax; height: 30vmax; animation-duration: 34s; opacity: 0.22; }
+.aurora::after {               /* cuadrícula sutil encima del degradado */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 54px 54px;
+    mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 75%);
+}
+@keyframes flotar {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(8vmax, 6vmax) scale(1.2); }
+}
+
+
+/* ---------- Navbar de vidrio ---------- */
+.navbar-glass {
+    background: rgba(7, 11, 26, 0.62);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--borde);
+}
+.brand {
+    font-weight: 800;
+    font-size: 1.35rem;
+    background: linear-gradient(90deg, var(--acento-2), var(--acento), var(--rosa));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+}
+.navbar .nav-link {
+    position: relative;
+    color: var(--suave);
+    font-weight: 500;
+    padding: 0.5rem 0.9rem !important;
+    transition: color 0.25s;
+}
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--acento), var(--acento-2));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+}
+.navbar .nav-link:hover, .navbar .nav-link.active { color: #fff; }
+.navbar .nav-link:hover::after, .navbar .nav-link.active::after { transform: scaleX(1); }
+.navbar-toggler { border-color: var(--borde); }
+@media (max-width: 991.98px) {
+    .navbar-collapse { padding: 0.6rem 0 1rem; }
+}
+
+/* ---------- Texto con degradado animado ---------- */
+.texto-degradado {
+    background: linear-gradient(100deg, var(--acento-2), var(--acento), var(--rosa), var(--acento-3), var(--acento-2));
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: mover-degradado 8s linear infinite;
+}
+@keyframes mover-degradado { to { background-position: 250% 0; } }
+.display-title { font-weight: 800; line-height: 1.02; }
+.etiqueta {
+    display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--acento-3);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+.titulo-seccion { font-weight: 700; font-size: clamp(1.6rem, 3vw, 2.3rem); }
+.cursor-escritura::after {
+    content: "▍";
+    margin-left: 2px;
+    color: var(--acento-3);
+    animation: parpadeo 0.9s steps(2) infinite;
+}
+@keyframes parpadeo { 50% { opacity: 0; } }
+
+/* ---------- Tarjetas de vidrio con brillo que sigue al mouse ---------- */
+.glass {
+    position: relative;
+    background: var(--vidrio);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    overflow: hidden;
+    transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s;
+    color: var(--texto);
+}
+.glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 0%), rgba(255, 255, 255, 0.10), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.35s;
+    pointer-events: none;
+}
+.glass:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--acento) 60%, transparent); box-shadow: 0 18px 50px -18px color-mix(in srgb, var(--acento) 70%, transparent); }
+.glass:hover::before { opacity: 1; }
+.glass > * { position: relative; }
+
+/* ---------- Animación de aparición al hacer scroll ---------- */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal.retraso-1 { transition-delay: 0.1s; }
+.reveal.retraso-2 { transition-delay: 0.2s; }
+.reveal.retraso-3 { transition-delay: 0.3s; }
+
+/* ---------- Botones ---------- */
+.btn-neon {
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    padding: 0.65rem 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    background:
+        linear-gradient(var(--fondo-2), var(--fondo-2)) padding-box,
+        linear-gradient(120deg, var(--acento), var(--acento-2)) border-box;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+.btn-neon:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 10px 30px -10px var(--acento); }
+.btn-neon:active { transform: translateY(0); }
+.btn-solido {
+    border: 0;
+    border-radius: 14px;
+    padding: 0.7rem 1.4rem;
+    font-weight: 700;
+    color: #07101f;
+    background: linear-gradient(120deg, var(--acento-3), var(--acento-2));
+    transition: transform 0.25s, filter 0.25s;
+}
+.btn-solido:hover { color: #07101f; transform: translateY(-2px); filter: brightness(1.1); }
+.btn-fantasma {
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    color: var(--texto);
+    background: transparent;
+    padding: 0.55rem 1.1rem;
+    transition: background 0.25s, border-color 0.25s;
+}
+.btn-fantasma:hover { background: var(--vidrio); border-color: var(--acento-2); color: #fff; }
+
+/* ---------- Foto de perfil con anillo giratorio ---------- */
+.foto-marco {
+    position: relative;
+    width: min(320px, 72vw);
+    aspect-ratio: 1;
+    margin-inline: auto;
+    cursor: pointer;
+}
+.foto-marco::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 42% 58% 55% 45% / 48% 42% 58% 52%;
+    background: conic-gradient(from 0deg, var(--acento), var(--acento-2), var(--acento-3), var(--rosa), var(--acento));
+    animation: girar 7s linear infinite, forma 9s ease-in-out infinite alternate;
+    filter: blur(1px);
+}
+.foto-marco img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 42% 58% 55% 45% / 48% 42% 58% 52%;
+    border: 6px solid var(--fondo);
+    animation: forma 9s ease-in-out infinite alternate;
+    transition: transform 0.5s;
+}
+.foto-marco.brillo img { transform: scale(1.04); }
+.foto-marco.brillo::before { filter: blur(10px); }
+@keyframes girar { to { transform: rotate(360deg); } }
+@keyframes forma {
+    0%   { border-radius: 42% 58% 55% 45% / 48% 42% 58% 52%; }
+    100% { border-radius: 58% 42% 40% 60% / 55% 60% 40% 45%; }
+}
+
+/* ---------- Marquesina de tecnologías ---------- */
+.marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+.marquee-track { display: flex; gap: 1rem; width: max-content; animation: desplazar 28s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-track span {
+    padding: 0.55rem 1.2rem;
+    border: 1px solid var(--borde);
+    border-radius: 999px;
+    background: var(--vidrio);
+    font-weight: 600;
+    white-space: nowrap;
+}
+@keyframes desplazar { to { transform: translateX(-50%); } }
+
+/* ---------- Panel de contacto (Datos personales) ---------- */
+.panel-contacto {
+    min-height: 98px;
+    border-left: 4px solid var(--acento-3);
+    border-radius: 14px;
+    background: rgba(182, 255, 92, 0.07);
+    padding: 1rem 1.2rem;
+    transition: background 0.3s;
+}
+.panel-contacto .via { font-size: 0.75rem; color: var(--acento-3); letter-spacing: 0.08em; text-transform: uppercase; }
+.panel-contacto.pulso { animation: pulso 0.6s ease; }
+@keyframes pulso { 0% { transform: scale(0.97); } 60% { transform: scale(1.015); } 100% { transform: scale(1); } }
+
+/* ---------- Datos en lista (dl) ---------- */
+.lista-datos dt { color: var(--suave); font-weight: 500; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.lista-datos dd { margin-bottom: 0.9rem; font-weight: 600; }
+
+/* ---------- Barras de habilidades ---------- */
+.progress { height: 10px; background: rgba(255, 255, 255, 0.08); border-radius: 999px; }
+.progress-bar {
+    width: 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--acento), var(--acento-2));
+    transition: width 1.4s cubic-bezier(.2, .8, .2, 1);
+}
+
+/* ---------- Acordeón de Bootstrap con estilo propio ---------- */
+.accordion { --bs-accordion-bg: transparent; --bs-accordion-color: var(--texto); --bs-accordion-border-color: var(--borde); --bs-accordion-btn-bg: transparent; --bs-accordion-active-bg: rgba(255,255,255,.06); --bs-accordion-active-color: #fff; --bs-accordion-btn-focus-box-shadow: 0 0 0 .2rem color-mix(in srgb, var(--acento) 40%, transparent); }
+.accordion-button { font-family: "Sora", sans-serif; font-weight: 600; }
+
+/* ---------- Chips de filtro (Experiencia) ---------- */
+.chip {
+    border: 1px solid var(--borde);
+    background: var(--vidrio);
+    color: var(--suave);
+    border-radius: 999px;
+    padding: 0.45rem 1.1rem;
+    font-weight: 600;
+    transition: all 0.25s;
+}
+.chip:hover { color: #fff; border-color: var(--acento-2); }
+.chip.activo { color: #07101f; background: linear-gradient(120deg, var(--acento-3), var(--acento-2)); border-color: transparent; }
+
+/* ---------- Línea de tiempo (Experiencia) ---------- */
+.timeline { position: relative; padding-left: 2.2rem; }
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 6px;
+    bottom: 6px;
+    width: 3px;
+    border-radius: 3px;
+    background: linear-gradient(var(--acento-2), var(--acento), var(--rosa));
+}
+.exp-item { position: relative; margin-bottom: 1.4rem; cursor: pointer; }
+.exp-item::before {
+    content: "";
+    position: absolute;
+    left: -2.2rem;
+    top: 1.6rem;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: var(--fondo);
+    border: 4px solid var(--acento-3);
+    box-shadow: 0 0 0 5px rgba(182, 255, 92, 0.15);
+    z-index: 2;
+}
+.exp-item .detalle { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s ease, opacity 0.4s ease; }
+.exp-item.abierta .detalle { max-height: 220px; opacity: 1; margin-top: 0.8rem; }
+.exp-item.abierta { border-color: var(--acento-2); }
+.exp-item .flecha { transition: transform 0.3s; display: inline-block; }
+.exp-item.abierta .flecha { transform: rotate(180deg); }
+.oculto { display: none !important; }
+
+/* ---------- Tabla (Formación) ---------- */
+.tabla-vidrio { --bs-table-bg: transparent; --bs-table-color: var(--texto); --bs-table-border-color: var(--borde); --bs-table-hover-bg: rgba(255,255,255,.05); --bs-table-hover-color: #fff; margin-bottom: 0; }
+.tabla-vidrio thead th { font-family: "Sora", sans-serif; color: var(--acento-3); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; border-bottom-width: 2px; }
+.tabla-vidrio td, .tabla-vidrio th { padding: 1rem 0.9rem; vertical-align: middle; }
+
+/* ---------- Visor de certificados (Formación) ---------- */
+.visor img { width: 100%; border-radius: 16px; border: 1px solid var(--borde); background: #fff; aspect-ratio: 800 / 560; object-fit: cover; transition: opacity 0.3s, transform 0.4s; }
+.visor img.cambiando { opacity: 0; transform: scale(0.97); }
+.miniatura { border: 2px solid transparent; border-radius: 14px; padding: 0; background: none; overflow: hidden; opacity: 0.6; transition: all 0.25s; }
+.miniatura img { width: 100%; display: block; border-radius: 12px; aspect-ratio: 800 / 560; object-fit: cover; }
+.miniatura:hover { opacity: 1; transform: translateY(-3px); }
+.miniatura.activa { opacity: 1; border-color: var(--acento-3); }
+.info-attr { font-family: "Consolas", "Courier New", monospace; font-size: 0.8rem; color: var(--suave); word-break: break-all; }
+.info-attr b { color: var(--acento-2); font-weight: 600; }
+
+/* ---------- Tarjetas de proyectos ---------- */
+.proy-card { height: 100%; display: flex; flex-direction: column; }
+.proy-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.proy-card .card-body { padding: 1.3rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+.proy-card .card-title { font-family: "Sora", sans-serif; font-weight: 700; font-size: 1.15rem; margin: 0; }
+.proy-card .card-text { color: var(--suave); font-size: 0.93rem; margin: 0; flex: 1; }
+.proy-nuevo { animation: aparecer-tarjeta 0.6s cubic-bezier(.2, .9, .3, 1.3); }
+@keyframes aparecer-tarjeta { from { opacity: 0; transform: scale(0.8) translateY(30px); } to { opacity: 1; transform: none; } }
+.insignia-tec { background: rgba(34, 211, 238, 0.14); color: var(--acento-2); border: 1px solid rgba(34, 211, 238, 0.35); border-radius: 999px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 600; align-self: flex-start; }
+.contador-grande { font-family: "Sora", sans-serif; font-weight: 800; font-size: 2.6rem; line-height: 1; }
+
+/* ---------- Formularios ---------- */
+.form-control, .form-select {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--borde);
+    color: var(--texto);
+    border-radius: 12px;
+    padding: 0.7rem 0.9rem;
+    transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
+}
+.form-control::placeholder { color: rgba(154, 166, 214, 0.7); }
+.form-control:focus, .form-select:focus { background-color: rgba(255, 255, 255, 0.09); color: #fff; border-color: var(--acento-2); box-shadow: 0 0 0 0.22rem rgba(34, 211, 238, 0.2); }
+.form-select option { color: #111; }
+.form-label { font-weight: 600; font-size: 0.9rem; color: var(--suave); }
+.campo-activo { border-color: var(--acento-3) !important; box-shadow: 0 0 0 0.22rem rgba(182, 255, 92, 0.18) !important; }
+.campo-error { border-color: var(--rosa) !important; }
+.form-range::-webkit-slider-thumb { background: var(--acento-3); }
+.form-range::-moz-range-thumb { background: var(--acento-3); }
+.selector-color { width: 56px; height: 44px; padding: 3px; border-radius: 12px; border: 1px solid var(--borde); background: var(--vidrio); cursor: pointer; }
+
+/* ---------- Lista de referencias ---------- */
+.list-group { --bs-list-group-bg: transparent; --bs-list-group-color: var(--texto); --bs-list-group-border-color: var(--borde); --bs-list-group-action-hover-bg: rgba(255,255,255,.06); --bs-list-group-action-hover-color: #fff; border-radius: var(--radio); overflow: hidden; }
+.ref-item { padding: 1.2rem 1.4rem !important; cursor: pointer; transition: background 0.3s, padding-left 0.3s; }
+.ref-item.resaltada { background: rgba(124, 92, 255, 0.18) !important; padding-left: 2rem !important; }
+.ref-item .contacto-ref { display: none; color: var(--acento-3); font-size: 0.9rem; margin-top: 0.4rem; }
+.ref-item.abierta .contacto-ref { display: block; }
+.avatar-ref { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-family: "Sora", sans-serif; font-weight: 700; color: #07101f; background: linear-gradient(135deg, var(--acento-3), var(--acento-2)); flex-shrink: 0; }
+
+/* ---------- Pie de página ---------- */
+footer { border-top: 1px solid var(--borde); background: rgba(7, 11, 26, 0.6); backdrop-filter: blur(10px); color: var(--suave); }
+
+/* ---------- Accesibilidad: respetar "reducir movimiento" ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+    .reveal { opacity: 1; transform: none; }
+}
+
+/* Evita desborde horizontal por el anillo/halo de la foto en pantallas pequeñas */
+header.container { overflow-x: clip; }
+
+.visor img { object-fit: contain; background: #fff; }
+.miniatura img { object-fit: contain; background: #fff; }
+.btn-electiva { cursor: pointer; color: var(--texto); border: 1px solid var(--borde); }
+.btn-electiva .card-body { display: flex; flex-direction: column; gap: .6rem; padding: 1.1rem; }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Perfil profesional de Roger Trujillo Cortina, estudiante de Ingeniería de Sistemas Informáticos.">
+    <title>Formación académica | Roger Trujillo Cortina</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-glass sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand" href="index.html">RTC<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="perfil.html">Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="formacion.html">Formación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container pt-5 pb-3">
+        <span class="etiqueta">Formación académica</span>
+        <h1 class="display-title titulo-seccion display-5">Lo que <span class="texto-degradado">he estudiado</span></h1>
+    </header>
+
+    <section class="container py-3">
+        <div class="glass p-2 p-md-4 reveal">
+            <div class="table-responsive">
+                <table class="table table-hover tabla-vidrio">
+                    <thead><tr><th>Periodo</th><th>Título / Nivel</th><th>Institución</th><th>Estado</th></tr></thead>
+                    <tbody>
+                        <tr><td>2026 – actualidad</td><td class="fw-semibold">Ingeniería de Sistemas Informáticos</td><td>Univalle, Santa Cruz</td><td><span class="badge text-bg-success">En curso</span></td></tr>
+                        <tr><td>16 jun 2026</td><td>Fundamentos de Linux</td><td>Cisco Networking Academy · Univalle</td><td><span class="badge text-bg-primary">Certificado</span></td></tr>
+                        <tr><td>27 may 2026</td><td>C++ Essentials 1</td><td>Cisco Networking Academy · Univalle</td><td><span class="badge text-bg-primary">Certificado</span></td></tr>
+                        <tr><td>23 abr 2026</td><td>Linux Unhatched</td><td>Cisco Networking Academy · Univalle</td><td><span class="badge text-bg-primary">Certificado</span></td></tr>
+                        <tr><td>29 mar 2026</td><td>Operating Systems Basics</td><td>Cisco Networking Academy</td><td><span class="badge text-bg-primary">Certificado</span></td></tr>
+                        <tr><td>2019</td><td>Bachillerato</td><td>Colegio Karl Marx · Pinar del Río, Cuba</td><td><span class="badge text-bg-secondary">Graduado</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-4">
+        <h2 class="h4 mb-3 reveal">Certificados Cisco Networking Academy</h2>
+        <div class="row g-4">
+            <div class="col-lg-7 reveal">
+                <div class="glass p-3 visor">
+                    <img src="img/netacad/fundamentos-linux.jpg" alt="Certificado de Fundamentos de Linux" title="Fundamentos de Linux" id="certImg" data-curso="Fundamentos de Linux" data-anio="2026">
+                    <div class="d-flex flex-wrap gap-2 mt-3">
+                        <button class="btn btn-fantasma btn-sm" id="btnZoom">🔍 Ampliar / reducir</button>
+                        <button class="btn btn-fantasma btn-sm" id="btnQuitarTitle">Quitar atributo title</button>
+                        <button class="btn btn-fantasma btn-sm" id="btnRestaurar">Restaurar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 reveal retraso-1">
+                <div class="row g-2 mb-3" id="miniaturas">
+                    <div class="col-6"><button class="miniatura activa" data-src="img/netacad/fundamentos-linux.jpg" data-curso="Fundamentos de Linux" data-anio="2026" aria-label="Fundamentos de Linux"><img src="img/netacad/fundamentos-linux.jpg" alt="Miniatura Fundamentos de Linux"></button></div>
+                    <div class="col-6"><button class="miniatura" data-src="img/netacad/cpp-essentials-1.jpg" data-curso="C++ Essentials 1" data-anio="2026" aria-label="C++ Essentials 1"><img src="img/netacad/cpp-essentials-1.jpg" alt="Miniatura C++ Essentials 1"></button></div>
+                    <div class="col-6"><button class="miniatura" data-src="img/netacad/linux-unhatched.jpg" data-curso="Linux Unhatched" data-anio="2026" aria-label="Linux Unhatched"><img src="img/netacad/linux-unhatched.jpg" alt="Miniatura Linux Unhatched"></button></div>
+                    <div class="col-6"><button class="miniatura" data-src="img/netacad/os-basics.jpg" data-curso="Operating Systems Basics" data-anio="2026" aria-label="Operating Systems Basics"><img src="img/netacad/os-basics.jpg" alt="Miniatura Operating Systems Basics"></button></div>
+                </div>
+                <div class="glass p-3">
+                    <h3 class="h6 text-suave mb-2">Atributos del certificado (en vivo)</h3>
+                    <div class="info-attr" id="infoAttr"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 mt-5">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2 small">
+            <span>© <span class="anio">2026</span> Roger Trujillo Cortina · Ingeniería de Sistemas Informáticos</span>
+            <span>Programación Web I · Univalle, Santa Cruz</span>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/formacion.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Perfil profesional de Roger Trujillo Cortina, estudiante de Ingeniería de Sistemas Informáticos.">
+    <title>Experiencia laboral | Roger Trujillo Cortina</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-glass sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand" href="index.html">RTC<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="perfil.html">Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="formacion.html">Formación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container pt-5 pb-3">
+        <span class="etiqueta">Experiencia laboral</span>
+        <h1 class="display-title titulo-seccion display-5">Mi <span class="texto-degradado">trayectoria</span></h1>
+        <p class="text-suave">Haz clic en una tarjeta para ver el detalle. Usa los filtros o agrega una experiencia nueva.</p>
+    </header>
+
+    <section class="container py-3">
+        <div class="d-flex flex-wrap gap-2 mb-4" id="filtros">
+            <button class="chip activo" data-filtro="todos">Todas</button>
+            <button class="chip" data-filtro="taller">Talleres y oficios</button>
+            <button class="chip" data-filtro="logistica">Logística</button>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="timeline" id="lineaTiempo">
+                <article class="exp-item glass p-4" data-tipo="taller">
+                    <div class="d-flex justify-content-between gap-3">
+                        <div><h3 class="h5 mb-1">Ayudante de mecánico</h3><div class="text-suave small">Taller mecánico · Cuba · 5 meses</div></div>
+                        <span class="flecha text-suave">▼</span>
+                    </div>
+                    <div class="detalle"><p class="mb-2 text-suave">Apoyo al mecánico en revisión y mantenimiento de vehículos, manejo de herramientas, limpieza y orden del taller.</p><button class="btn btn-fantasma btn-sm btn-borrar">Eliminar</button></div>
+                </article>
+                <article class="exp-item glass p-4" data-tipo="taller">
+                    <div class="d-flex justify-content-between gap-3">
+                        <div><h3 class="h5 mb-1">Ayudante de tapicero</h3><div class="text-suave small">Taller de tapicería · Cuba · 6 meses</div></div>
+                        <span class="flecha text-suave">▼</span>
+                    </div>
+                    <div class="detalle"><p class="mb-2 text-suave">Colaboración en el desmontaje, corte y forrado de asientos y muebles; aprendí precisión manual y atención al detalle.</p><button class="btn btn-fantasma btn-sm btn-borrar">Eliminar</button></div>
+                </article>
+                <article class="exp-item glass p-4" data-tipo="logistica">
+                    <div class="d-flex justify-content-between gap-3">
+                        <div><h3 class="h5 mb-1">Estibador en fábrica de jugos (Cuba)</h3><div class="text-suave small">Fábrica de jugos · 9 meses</div></div>
+                        <span class="flecha text-suave">▼</span>
+                    </div>
+                    <div class="detalle"><p class="mb-2 text-suave">Carga, descarga y estiba de mercancía en la planta, trabajo físico en equipo y cumplimiento de horarios de producción.</p><button class="btn btn-fantasma btn-sm btn-borrar">Eliminar</button></div>
+                </article>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="glass p-4 reveal">
+                    <h2 class="h5">Agregar experiencia</h2>
+                    <form id="formExp" novalidate>
+                        <div class="mb-3"><label class="form-label" for="expTitulo">Cargo</label><input class="form-control" id="expTitulo" placeholder="Ej: Ayudante de laboratorio" required></div>
+                        <div class="mb-3"><label class="form-label" for="expLugar">Lugar</label><input class="form-control" id="expLugar" placeholder="Ej: Univalle" required></div>
+                        <div class="row g-2 mb-3">
+                            <div class="col-6"><label class="form-label" for="expFecha">Periodo</label><input class="form-control" id="expFecha" placeholder="2026"></div>
+                            <div class="col-6"><label class="form-label" for="expTipo">Tipo</label><select class="form-select" id="expTipo"><option value="taller">Talleres y oficios</option><option value="logistica">Logística</option></select></div>
+                        </div>
+                        <div class="mb-3"><label class="form-label" for="expDetalle">Descripción</label><textarea class="form-control" id="expDetalle" rows="2" placeholder="¿Qué hacías?"></textarea></div>
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-solido">Agregar al inicio</button>
+                            <button type="button" class="btn btn-fantasma" id="btnAlFinal">Agregar al final</button>
+                        </div>
+                    </form>
+                    <div class="mt-3 small" id="msgExp"></div>
+                </div>
+                <div class="glass p-4 mt-4 reveal retraso-1 text-center">
+                    <div class="contador-grande texto-degradado" id="totalExp">3</div>
+                    <div class="text-suave small">experiencias mostradas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <span class="etiqueta">Cursos electivos · Univalle Next</span>
+        <h2 class="titulo-seccion mb-1">Competencias para la vida y la profesión</h2>
+        <p class="text-suave">9 cursos completados. Haz clic en un certificado para verlo en grande.</p>
+        <div class="row g-4">
+            <div class="col-md-4 reveal"><button class="glass proy-card w-100 p-0 text-start btn-electiva" data-bs-toggle="modal" data-bs-target="#modalCert" data-src="img/electivas/basic-emotions.jpg" data-titulo="Understanding Your Basic Emotions"><img src="img/electivas/basic-emotions.jpg" alt="Certificado: Understanding Your Basic Emotions" loading="lazy" style="aspect-ratio:1200/850;object-fit:cover"><span class="card-body"><span class="insignia-tec">8 h · 22 may 2026</span><span class="card-title h6">Understanding Your Basic Emotions</span></span></button></div>
+            <div class="col-md-4 reveal"><button class="glass proy-card w-100 p-0 text-start btn-electiva" data-bs-toggle="modal" data-bs-target="#modalCert" data-src="img/electivas/empatia.jpg" data-titulo="Desarrolla tu empatía"><img src="img/electivas/empatia.jpg" alt="Certificado: Desarrolla tu empatía" loading="lazy" style="aspect-ratio:1200/850;object-fit:cover"><span class="card-body"><span class="insignia-tec">8 h · 17 may 2026</span><span class="card-title h6">Desarrolla tu empatía</span></span></button></div>
+            <div class="col-md-4 reveal"><button class="glass proy-card w-100 p-0 text-start btn-electiva" data-bs-toggle="modal" data-bs-target="#modalCert" data-src="img/electivas/inteligencia-emocional.jpg" data-titulo="Introducción a la inteligencia emocional"><img src="img/electivas/inteligencia-emocional.jpg" alt="Certificado: Introducción a la inteligencia emocional" loading="lazy" style="aspect-ratio:1200/850;object-fit:cover"><span class="card-body"><span class="insignia-tec">4 h · 22 may 2026</span><span class="card-title h6">Introducción a la inteligencia emocional</span></span></button></div>
+            <div class="col-md-4 reveal"><button class="glass proy-card w-100 p-0 text-start btn-electiva" data-bs-toggle="modal" data-bs-target="#modalCert" data-src="img/electivas/work-life-balance.jpg" data-titulo="Work-life balance"><img src="img/electivas/work-life-balance.jpg" alt="Certificado: Work-life balance" loading="lazy" style="aspect-ratio:1200/850;object-fit:cover"><span class="card-body"><span class="insignia-tec">8 h · 25 jun 2026</span><span class="card-title h6">Work-life balance</span></span></button></div>
+            <div class="col-md-4 reveal"><button class="glass proy-card w-100 p-0 text-start btn-electiva" data-bs-toggle="modal" data-bs-target="#modalCert" data-src="img/electivas/equilibrio.jpg" data-titulo="Equilibrio entre vida personal y profesional"><img src="img/electivas/equilibrio.jpg" alt="Certificado: Equilibrio entre vida personal y profesional" loading="lazy" style="aspect-ratio:1200/850;object-fit:cover"><span class="card-body"><span class="insignia-tec">9 h · 24 jun 2026</span><span class="card-title h6">Equilibrio entre vida personal y profesional</span></span></button></div>
+            <div class="col-md-4 reveal"><button class="glass proy-card w-100 p-0 text-start btn-electiva" data-bs-toggle="modal" data-bs-target="#modalCert" data-src="img/electivas/mindfulness.jpg" data-titulo="El poder del mindfulness"><img src="img/electivas/mindfulness.jpg" alt="Certificado: El poder del mindfulness" loading="lazy" style="aspect-ratio:1200/850;object-fit:cover"><span class="card-body"><span class="insignia-tec">3 h · 25 jun 2026</span><span class="card-title h6">El poder del mindfulness</span></span></button></div>
+            <div class="col-md-4 reveal"><button class="glass proy-card w-100 p-0 text-start btn-electiva" data-bs-toggle="modal" data-bs-target="#modalCert" data-src="img/electivas/soft-skills.jpg" data-titulo="Soft skills"><img src="img/electivas/soft-skills.jpg" alt="Certificado: Soft skills" loading="lazy" style="aspect-ratio:1200/850;object-fit:cover"><span class="card-body"><span class="insignia-tec">8 h · 19 jun 2026</span><span class="card-title h6">Soft skills</span></span></button></div>
+            <div class="col-md-4 reveal"><button class="glass proy-card w-100 p-0 text-start btn-electiva" data-bs-toggle="modal" data-bs-target="#modalCert" data-src="img/electivas/networking.jpg" data-titulo="Networking"><img src="img/electivas/networking.jpg" alt="Certificado: Networking" loading="lazy" style="aspect-ratio:1200/850;object-fit:cover"><span class="card-body"><span class="insignia-tec">9 h · 19 jun 2026</span><span class="card-title h6">Networking</span></span></button></div>
+            <div class="col-md-4 reveal"><button class="glass proy-card w-100 p-0 text-start btn-electiva" data-bs-toggle="modal" data-bs-target="#modalCert" data-src="img/electivas/tic-bilingues.jpg" data-titulo="Introducción al uso de las TIC en entornos bilingües"><img src="img/electivas/tic-bilingues.jpg" alt="Certificado: Introducción al uso de las TIC en entornos bilingües" loading="lazy" style="aspect-ratio:1200/850;object-fit:cover"><span class="card-body"><span class="insignia-tec">3 h · 19 jun 2026</span><span class="card-title h6">Introducción al uso de las TIC en entornos bilingües</span></span></button></div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="modalCert" tabindex="-1" aria-labelledby="modalTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content glass" style="background:#0d1330">
+                <div class="modal-header border-secondary-subtle"><h2 class="modal-title h5" id="modalTitulo">Certificado</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+                <div class="modal-body"><img id="modalImg" src="" alt="" class="img-fluid rounded"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 mt-5">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2 small">
+            <span>© <span class="anio">2026</span> Roger Trujillo Cortina · Ingeniería de Sistemas Informáticos</span>
+            <span>Programación Web I · Univalle, Santa Cruz</span>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/experiencia.js"></script>
+</body>
+</html>

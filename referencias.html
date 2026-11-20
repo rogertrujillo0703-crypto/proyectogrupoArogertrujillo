@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Perfil profesional de Roger Trujillo Cortina, estudiante de Ingeniería de Sistemas Informáticos.">
+    <title>Referencias laborales | Roger Trujillo Cortina</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-glass sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand" href="index.html">RTC<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="perfil.html">Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="formacion.html">Formación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container pt-5 pb-3">
+        <span class="etiqueta">Referencias laborales</span>
+        <h1 class="display-title titulo-seccion display-5">Quién puede <span class="texto-degradado">hablar de mí</span></h1>
+        <p class="text-suave">Pasa el mouse sobre una referencia para resaltarla. Doble clic para ver su contacto.</p>
+    </header>
+
+    <section class="container py-3">
+        <div class="row g-4">
+            <div class="col-lg-7 reveal">
+                <ul class="list-group glass" id="listaRef">
+                    <!-- REFERENCIAS DE EJEMPLO: para cambiarlas, edita nombre, cargo, relación y contacto en cada <li>, o borra el <li> completo. -->
+                    <li class="list-group-item ref-item d-flex gap-3 align-items-start">
+                        <div class="avatar-ref">EP</div>
+                        <div><div class="fw-semibold">Sr. Ernesto Pérez (ejemplo)</div><div class="small text-suave">Jefe de taller mecánico · Supervisor directo</div><div class="contacto-ref">ernesto.perez@ejemplo.com · +591 7000 0001</div></div>
+                    </li>
+                    <li class="list-group-item ref-item d-flex gap-3 align-items-start">
+                        <div class="avatar-ref">JD</div>
+                        <div><div class="fw-semibold">Sr. Julio Díaz (ejemplo)</div><div class="small text-suave">Maestro tapicero · Supervisor directo</div><div class="contacto-ref">julio.diaz@ejemplo.com · +591 7000 0002</div></div>
+                    </li>
+                    <li class="list-group-item ref-item d-flex gap-3 align-items-start">
+                        <div class="avatar-ref">CV</div>
+                        <div><div class="fw-semibold">Ing. Carlos Vaca (ejemplo)</div><div class="small text-suave">Docente de Programación · Tutor académico</div><div class="contacto-ref">carlos.vaca@ejemplo.com · +591 7000 0003</div></div>
+                    </li>
+                </ul>
+                <p class="small text-suave mt-3" id="estadoRef">Pasa el mouse por una referencia.</p>
+            </div>
+            <div class="col-lg-5 reveal retraso-1">
+                <div class="glass p-4">
+                    <h2 class="h5">Déjame un mensaje</h2>
+                    <form id="formMsg" novalidate>
+                        <div class="mb-3"><label class="form-label" for="mNombre">Tu nombre</label><input class="form-control" id="mNombre" placeholder="Nombre y apellido"></div>
+                        <div class="mb-3"><label class="form-label" for="mMotivo">Motivo</label><select class="form-select" id="mMotivo"><option value="oferta">Oferta de trabajo</option><option value="proyecto">Proyecto en conjunto</option><option value="consulta">Consulta</option></select></div>
+                        <div class="mb-1"><label class="form-label" for="mTexto">Mensaje</label><textarea class="form-control" id="mTexto" rows="3" maxlength="140" placeholder="Escribe aquí..."></textarea></div>
+                        <div class="small text-suave mb-3"><span id="contChars">0</span>/140 caracteres</div>
+                        <button type="submit" class="btn btn-solido w-100">Enviar</button>
+                    </form>
+                    <div id="resultadoMsg" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 mt-5">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2 small">
+            <span>© <span class="anio">2026</span> Roger Trujillo Cortina · Ingeniería de Sistemas Informáticos</span>
+            <span>Programación Web I · Univalle, Santa Cruz</span>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/referencias.js"></script>
+</body>
+</html>

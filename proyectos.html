@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Perfil profesional de Roger Trujillo Cortina, estudiante de Ingeniería de Sistemas Informáticos.">
+    <title>Proyectos | Roger Trujillo Cortina</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-glass sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand" href="index.html">RTC<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="perfil.html">Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="formacion.html">Formación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container pt-5 pb-3">
+        <span class="etiqueta">Proyectos</span>
+        <h1 class="display-title titulo-seccion display-5">Cosas que <span class="texto-degradado">he construido</span></h1>
+    </header>
+
+    <section class="container py-3">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="row g-4" id="listaProy">
+                <div class="col-md-6 col-xl-4 item-proyecto">
+                    <div class="glass proy-card"><img src="img/proy1.svg" alt="TOP 2026 · Videojuegos"><div class="card-body"><span class="insignia-tec">Bootstrap</span><h3 class="card-title">TOP 2026 · Videojuegos</h3><p class="card-text">Sitio con Bootstrap 5 sobre los mejores videojuegos del año: navbar, cards, tabla y carrusel.</p><button class="btn btn-fantasma btn-sm btn-quitar">Quitar</button></div></div>
+                </div>
+                <div class="col-md-6 col-xl-4 item-proyecto">
+                    <div class="glass proy-card"><img src="img/proy2.svg" alt="Reino Animal: Mamíferos"><div class="card-body"><span class="insignia-tec">JavaScript</span><h3 class="card-title">Reino Animal: Mamíferos</h3><p class="card-text">Página que usa selectores de JavaScript para buscar, filtrar y contar animales.</p><button class="btn btn-fantasma btn-sm btn-quitar">Quitar</button></div></div>
+                </div>
+                <div class="col-md-6 col-xl-4 item-proyecto">
+                    <div class="glass proy-card"><img src="img/proy3.svg" alt="Álbum de mamíferos"><div class="card-body"><span class="insignia-tec">HTML + CSS</span><h3 class="card-title">Álbum de mamíferos</h3><p class="card-text">Galería responsive adaptada del ejemplo Album de Bootstrap con imágenes propias.</p><button class="btn btn-fantasma btn-sm btn-quitar">Quitar</button></div></div>
+                </div>
+                </div>
+                <p class="text-suave text-center mt-4 oculto" id="vacio">No hay proyectos. ¡Agrega uno nuevo! →</p>
+            </div>
+            <div class="col-lg-4">
+                <div class="glass p-4 reveal">
+                    <h2 class="h5">Nuevo proyecto</h2>
+                    <form id="formProy" novalidate>
+                        <div class="mb-3"><label class="form-label" for="pNombre">Nombre</label><input class="form-control" id="pNombre" required placeholder="Mi proyecto"></div>
+                        <div class="mb-3"><label class="form-label" for="pDesc">Descripción</label><textarea class="form-control" id="pDesc" rows="2" placeholder="¿De qué trata?"></textarea></div>
+                        <div class="mb-3"><label class="form-label" for="pTec">Tecnología</label><input class="form-control" id="pTec" placeholder="Ej: Bootstrap"></div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-solido">Agregar al final</button>
+                            <button type="button" class="btn btn-neon" id="btnPrimero">Agregar al inicio</button>
+                            <button type="button" class="btn btn-fantasma" id="btnEntre">Insertar antes del 2.º</button>
+                            <button type="button" class="btn btn-fantasma" id="btnQuitarUltimo">Quitar el último</button>
+                        </div>
+                    </form>
+                    <div class="small mt-3" id="msgProy"></div>
+                </div>
+                <div class="glass p-4 mt-4 text-center reveal retraso-1">
+                    <div class="contador-grande texto-degradado" id="totalProy">3</div>
+                    <div class="text-suave small">proyectos en el portafolio</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 mt-5">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2 small">
+            <span>© <span class="anio">2026</span> Roger Trujillo Cortina · Ingeniería de Sistemas Informáticos</span>
+            <span>Programación Web I · Univalle, Santa Cruz</span>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/proyectos.js"></script>
+</body>
+</html>
